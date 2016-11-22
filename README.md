@@ -58,8 +58,8 @@ How to cite
 
 Please cite the following papers:
 
-1	Ota, S. & Li, W.-H. NJML+: An Extension of the NJML Method to Handle Protein Sequence Data and Computer Software Implementation. Mol Biol Evol 18, 1983-1992 (2001).
-2	Ota, S. & Li, W.-H. NJML: A Hybrid Algorithm for the Neighbor-Joining and Maximum-Likelihood Methods. Mol Biol Evol 17, 1401-1409 (2000).
+1. Ota, S. & Li, W.-H. NJML+: An Extension of the NJML Method to Handle Protein Sequence Data and Computer Software Implementation. Mol Biol Evol 18, 1983-1992 (2001).
+2. Ota, S. & Li, W.-H. NJML: A Hybrid Algorithm for the Neighbor-Joining and Maximum-Likelihood Methods. Mol Biol Evol 17, 1401-1409 (2000).
 
 
 Known problems
