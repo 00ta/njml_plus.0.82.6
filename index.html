@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Njml plus.0.82.6 by 00ta</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Njml plus.0.82.6</h1>
+        <p>This is an extension of the NJML Method to handle DNA and protein sequence data</p>
+
+        <p class="view"><a href="https://github.com/00ta/njml_plus.0.82.6">View the Project on GitHub <small>00ta/njml_plus.0.82.6</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/00ta/njml_plus.0.82.6/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/00ta/njml_plus.0.82.6/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/00ta/njml_plus.0.82.6">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="njml-0826--manual" class="anchor" href="#njml-0826--manual" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NJML+ 0.82.6  Manual</h1>
+
+<h2>
+<a id="satoshi-oota" class="anchor" href="#satoshi-oota" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Satoshi Oota</h2>
+
+<ul>
+<li>Bioresource Information Division</li>
+<li>Department of Biological Systems</li>
+<li>RIKEN Bioresource Center</li>
+<li>3-1-1 Koya-dai, Tsukuba 305-0074, JAPAN </li>
+<li>Tel: +81-29-836-9039</li>
+<li>Fax:+81-29-836-9077</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="how-to-compile" class="anchor" href="#how-to-compile" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to compile</h2>
+
+<p>Just <code>make</code> in this directory. Depending on your environments, a lot of warnings will be generated
+from subsets of PHYLIP and CLUSTALW but they are OK.</p>
+
+<p>NJML+ 0.82.6 source code was pre-compiled for MacOS (El Capitan). So if you are using El Capitan, you do not need to recompile. Currently I tested NJML+ 0.82.6 only on Unix-like system including MacOS (El Capitan). But it should work also on Windows with some modifications.</p>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>After the compilation, set environment variable <code>NJMLDIR</code> into the directory where NJML+ 0.82.6 resides. For example:</p>
+
+<h3>
+<a id="in-case-of-bash-shell" class="anchor" href="#in-case-of-bash-shell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>In case of bash shell:</h3>
+
+<p><code>export NJMLDIR=/home/oota/njml_plus.0.82.6;</code></p>
+
+<h3>
+<a id="in-cases-of-cshtcsh-shell" class="anchor" href="#in-cases-of-cshtcsh-shell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>In cases of csh/tcsh shell:</h3>
+
+<p><code>setenv NJMLDIR /home/oota/njml_plus.0.82.6;</code></p>
+
+<p><code>/home/oota</code> should be replaces with a directory you prefer.</p>
+
+<p>NJML+ 0.82.6 is controlled by a Yang's paml-like control file:
+<code>njml_plus.ctl</code></p>
+
+<h2>
+<a id="example-of-njml_plusctl" class="anchor" href="#example-of-njml_plusctl" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example of njml_plus.ctl</h2>
+
+<p><code>seqfile = Mel.seq /* sequence data file name */</code></p>
+
+<p><code>threshold = 90    /* Absolute # of reliability measure as a threshold; auto: experimental dynamic assignment of the threshold */</code></p>
+
+<p><code>model = JTT   /* evolutionary model: JC; K2P; HKY; JTT; Dayhoff */</code></p>
+
+<p><code>TS/TV = 4.0</code></p>
+
+<p><code>mode = A     /* likelihood computation mode: A, B, C, or D */</code></p>
+
+<p><code>n = 3     /* # of removed internal branches */</code></p>
+
+<p>A Sample file is <code>$NJMLDIR/njml_plus.0.82/src/njml_plus.ctl</code>.</p>
+
+<p>After setting the control file in<code>$NJMLDIR/njml_plus.0.82.6/src</code>, just
+run <code>./njml_plus</code>.</p>
+
+<p>At the current version, I recommend you to copy sequence file in $NJMLDIR/njml_plus.0.82/src directory and run njml_plus. Created working files may destroy your files.</p>
+
+<p>A result will be in <code>finaltree2</code>. Each negative number indicates reevaluated internal branches by NJML+ at step s, where s = the negative number * -1. Statistical information (Bootstrap values of candidate trees and standard error of the maximum likelihood values) is reported for the reevaluated internal branches but the current version does not have a convenient utility to show them. The utility will be added in the next release.</p>
+
+<p>I recommend you to use NJPLOT to display the final tree.</p>
+
+<h2>
+<a id="how-to-cite" class="anchor" href="#how-to-cite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to cite</h2>
+
+<p>Please cite the following papers:</p>
+
+<ol>
+<li>Ota, S. &amp; Li, W.-H. NJML+: An Extension of the NJML Method to Handle Protein Sequence Data and Computer Software Implementation. Mol Biol Evol 18, 1983-1992 (2001).</li>
+<li>Ota, S. &amp; Li, W.-H. NJML: A Hybrid Algorithm for the Neighbor-Joining and Maximum-Likelihood Methods. Mol Biol Evol 17, 1401-1409 (2000).</li>
+</ol>
+
+<h2>
+<a id="known-problems" class="anchor" href="#known-problems" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known problems</h2>
+
+<ol>
+<li> NJML+ 0.82.6 requires part of two packages PHYLIP and CLUSTALW. While they are included in NJML+ 0.82.6, they were modified from the originals. If you want to redistribute NJML+ 0.82.6, please do it as the whole package.</li>
+<li> Generated statistic information tables are not sorted by the log maximum likelihood values. They are in order of generated topologies.</li>
+<li> A lot of messy messages are displayed during execution.</li>
+<li> NJML+ 0.82.6 uses a set of intermediate files in the src directory, which will be overwritten. Please be cautious if you run NJML+ 0.82.6 on a mainframe machine. The intermediate topologies with branch lengths and bootstrap values are output just to standard output. You need to redirect if you want to gather them.</li>
+</ol>
+
+<p>Enjoy!</p>
+
+<p>Satoshi (2016/11/21)</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/00ta">00ta</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
